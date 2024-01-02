@@ -1,34 +1,50 @@
-# DevOps-7-Yakymov-Yevhen
+# Password generator
 
+Utility for generating passwords according to a given template that supports the CLI interface.
 
-Reports for homework assignments of the EPAM DevOps UA Internal course
+## CLI options
 
+The script supports the following CLI options:
 
-## Module-02_Python
+- **[ -n ]** - Set length of password and generate random password
+                    from set {small lateral ASCII, big lateral ASCII, digit}
+- **[ -t, --template ]** - Set template for generate passwords *(for future development)*
+- **[ -f, --file ]** - Getting list of patterns from file and generate for each random password *(for future development)*
+- **[ -c, --count ]** - Number of passwords
+- **[ -v, --verbose ]** - Verbose mode (-v |-vv |-vvv ) *(for future development)*
+- **[ -S, --set ]** - Character set
+- **[ -p, --permute ]** - Randomly permute characters of password *(for future development)*
 
-Python tasks of the EPAM DevOps UA Internal course. This module includes assignments:
+## Example 1. One password
 
-
-### Python. Task-2. Part-1.
-
-1. .
-
-<!-- - [ ] [Linux](https://git-scm.com/download/linux)
-- [ ] [Windows](https://git-scm.com/download/win)
-- [ ] [macOS](https://git-scm.com/download/win) -->
-
-
-2. .
-
-<!-- *main commands:*
-
-```bash
-git --version
-git config --global user.name "user name"
-git config --global user.email "email"
-git config --global core.editor "code --wait"
+Run script from CLI with arguments:
+```CLI
+python password_generator.py -n 12 -c 1 -S xyz
 ```
 
-*my sequence of actions:*
+Input data:
+```CLI
+Use characters from set {small lateral ASCII, big lateral ASCII, digit, punctuation}? (y/yes): yes
+```
 
-![Homework-1_Part-1.2](m1-Git/m1-Git-Task-01/screenshots/Homework-1_Part-1.2.png) -->
+Output data:
+```CLI
+Password: /2hEpf|7!%*E
+```
+
+## Example 2. Set of passwords
+
+Run script from CLI with arguments:
+```CLI
+python password_generator.py -n 10 --count 3 --set xyz 
+```
+
+Input data:
+```CLI
+Use characters from set {small lateral ASCII, big lateral ASCII, digit, punctuation}? (y/yes): yes
+```
+
+Output data:
+```CLI
+List of passwords: ['sWKb`[qf5K', 'H$+}x]g4#c', 'ZJp;ia/)d@']
+```
